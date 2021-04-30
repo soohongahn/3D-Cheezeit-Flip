@@ -34,13 +34,13 @@ body{
   width: var(--width);
   height: var(--height);
   transform: translate(-50%, -50%) translate3d(0, 0, calc(var(--depth)*0.5));
-  background: url("front.png");
+  background: url("images/front.png");
   background-size: 100% 100%;
 }
 .front{
   transform: translate(-50%, -50%) translate3d(0, 0, calc(var(--depth)*-0.5));
   background: rgb(168, 40, 38);
-  background: url("back.png");
+  background: url("images/back.png");
   background-size: 100% 100%;
 }
 
@@ -51,13 +51,13 @@ body{
   width: var(--width);
   height: var(--depth);
   transform: translate(-50%, -50%) rotateX(var(--rotation)) translate3d(0, 0, calc(var(--height)*-0.5));
-  background: url("bottom.png");
+  background: url("images/bottom.png");
   background-size: 100% 100%;
 }
 
 .top{
   --rotation: -90deg;
-  background: url("top.png");
+  background: url("images/top.png");
   background-size: 100% 100%;
 }
 
@@ -68,13 +68,13 @@ body{
   width: var(--depth);
   height: var(--height);
   transform: translate(-50%, -50%) rotateY(var(--rotation)) translate3d(0, 0, calc(var(--width)*-0.5));
-  background: url("left.png");
+  background: url("images/left.png");
   background-size: 100% 100%;
 }
 
 .right{
   --rotation: -90deg;
-  background: url("right.png");
+  background: url("images/right.png");
   background-size: 100% 100%;
 }
 
@@ -84,7 +84,7 @@ body{
 }
 #cube.right{
   transition: 1s;
-  transform: translate(-50%, -50%) rotateX(20deg) rotateY(-80deg);
+  transform: translate(-50%, -50%) rotateX(20deg) rotateY(-85deg);
 }
 #cube.up{
   transition: 1s;
@@ -124,7 +124,10 @@ p{
 }
 
 .buttons div{
-  border: 1px white solid;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.buttons div:hover{
+  background: #9d0208;
 }
