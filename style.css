@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+}
+
+.container{
+  --width: 450px;
+  --height: calc(var(--width) / 2);
+  --depth: 80px;
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(20deg) rotateY(10deg);
+  transform-style: preserve-3d;
+}
+
+.face{
+  background: rgba(231, 111, 81, .8);
+  position: absolute;
+  opacity: 1;
+}
+
+.front, .back{
+  top: 50%;
+  left: 50%;
+  width: var(--width);
+  height: var(--height);
+  transform: translate(-50%, -50%) translate3d(0, 0, calc(var(--depth)*0.5));
+  background: url("front.png");
+  background-size: 100% 100%;
+}
+.front{
+  transform: translate(-50%, -50%) translate3d(0, 0, calc(var(--depth)*-0.5));
+  background: rgb(168, 40, 38);
+  background: url("back.png");
+  background-size: 100% 100%;
+}
+
+.top, .bottom{
+  --rotation: 90deg;
+  top: 50%;
+  left: 50%;
+  width: var(--width);
+  height: var(--depth);
+  transform: translate(-50%, -50%) rotateX(var(--rotation)) translate3d(0, 0, calc(var(--height)*-0.5));
+  background: url("bottom.png");
+  background-size: 100% 100%;
+}
+
+.top{
+  --rotation: -90deg;
+  background: url("top.png");
+  background-size: 100% 100%;
+}
+
+.left, .right{
+  --rotation: 90deg;
+  top: 50%;
+  left: 50%;
+  width: var(--depth);
+  height: var(--height);
+  transform: translate(-50%, -50%) rotateY(var(--rotation)) translate3d(0, 0, calc(var(--width)*-0.5));
+  background: url("left.png");
+  background-size: 100% 100%;
+}
+
+.right{
+  --rotation: -90deg;
+  background: url("right.png");
+  background-size: 100% 100%;
+}
+
+#cube.left{
+  transition: 1s;
+  transform: translate(-50%, -50%) rotateX(20deg) rotateY(100deg);
+}
+#cube.right{
+  transition: 1s;
+  transform: translate(-50%, -50%) rotateX(20deg) rotateY(-80deg);
+}
+#cube.up{
+  transition: 1s;
+  transform: translate(-50%, -50%) rotateX(-85deg) rotateY(10deg);
+}
+#cube.down{
+  transition: 1s;
+  transform: translate(-50%, -50%) rotateX(100deg) rotateY(10deg);
+}
+#cube.front{
+  transition: 1s;
+  transform: translate(-50%, -50%) rotateX(20deg) rotateY(10deg);
+}
+#cube.back{
+  transition: 1s;
+  transform: translate(-50%, -50%) rotateX(20deg) rotateY(-170deg);
+}
+
+h1{
+  margin-top: 50px;
+  font-size: 60px;
+}
+
+p{
+  font-size: 20px;
+}
+
+.buttons{
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons div{
+  border: 1px white solid;
+  padding: 5px 10px;
+  cursor: pointer;
+}
